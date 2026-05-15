@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clases de Inglés y Español | Profesor Profesional</title>
+<meta name="description" content="Clases de inglés y español con un método profesional, flexible y diseñado para resultados reales. Todos los niveles. Online y presencial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --navy:#0D1B2A;
+  --blue:#1A56DB;
+  --blue-light:#EEF4FF;
+  --blue-mid:#BFDBFE;
+  --gold:#F59E0B;
+  --gold-light:#FEF3C7;
+  --green:#059669;
+  --green-light:#D1FAE5;
+  --surface:#F8F9FB;
+  --white:#FFFFFF;
+  --text:#1E293B;
+  --muted:#64748B;
+  --border:#E2E8F0;
+  --radius:12px;
+  --radius-lg:20px;
+  --shadow:0 1px 3px rgba(0,0,0,0.06),0 4px 16px rgba(0,0,0,0.06);
+  --shadow-md:0 4px 24px rgba(0,0,0,0.10);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',sans-serif;color:var(--text);background:var(--white);font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* LANG BAR */
+.lang-bar{background:var(--navy);padding:0.5rem 5vw;display:flex;justify-content:flex-end;align-items:center;gap:0.75rem}
+.lang-btn{background:transparent;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.7);padding:0.25rem 0.75rem;border-radius:2rem;font-size:0.75rem;font-family:inherit;cursor:pointer;transition:all 0.2s;letter-spacing:0.05em}
+.lang-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.lang-btn:hover:not(.active){border-color:rgba(255,255,255,0.6);color:#fff}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 5vw}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1200px;margin:0 auto}
+.nav-logo{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:700;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:0.5rem}
+.logo-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);display:inline-block;flex-shrink:0}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:0.9rem;font-weight:500;transition:color 0.2s}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{background:var(--blue) !important;color:#fff !important;padding:0.55rem 1.35rem;border-radius:2rem;font-weight:600 !important;transition:background 0.2s,transform 0.2s !important}
+.nav-cta:hover{background:#1446c0 !important;transform:translateY(-1px)}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:4px}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all 0.3s}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#162d4d 100%);color:#fff;padding:5rem 5vw 4rem;overflow:hidden;position:relative}
+.hero::before{content:'';position:absolute;top:-40%;right:-15%;width:70vw;height:70vw;border-radius:50%;background:radial-gradient(circle,rgba(26,86,219,0.18) 0%,transparent 65%);pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);border-radius:2rem;padding:0.35rem 1rem;font-size:0.8rem;color:rgba(255,255,255,0.85);margin-bottom:1.5rem;letter-spacing:0.04em}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(2.3rem,5vw,3.75rem);font-weight:700;line-height:1.1;margin-bottom:1.25rem}
+.hero h1 em{font-style:italic;color:#93C5FD}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.75);max-width:42ch;margin-bottom:0.35rem;font-weight:300;line-height:1.65}
+.hero-sub-en{font-size:0.9rem;color:rgba(255,255,255,0.4);font-style:italic;margin-bottom:2rem;font-weight:300}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.btn-gold{background:var(--gold);color:var(--navy);border:none;padding:0.9rem 2rem;border-radius:2rem;font-size:0.95rem;font-family:inherit;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.2s}
+.btn-gold:hover{background:#d97706;transform:translateY(-2px)}
+.btn-outline-white{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.35);padding:0.9rem 2rem;border-radius:2rem;font-size:0.95rem;font-family:inherit;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.2s}
+.btn-outline-white:hover{border-color:#fff;background:rgba(255,255,255,0.08)}
+.hero-visual{display:flex;flex-direction:column;gap:1rem}
+.hcard{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius-lg);padding:1.5rem 1.75rem;backdrop-filter:blur(10px)}
+.hcard-flag{font-size:1.6rem;margin-bottom:0.4rem}
+.hcard-title{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:700;margin-bottom:0.2rem}
+.hcard-desc{font-size:0.82rem;color:rgba(255,255,255,0.55)}
+.hcard-levels{display:flex;gap:0.35rem;margin-top:0.65rem;flex-wrap:wrap}
+.level-pill{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:2rem;padding:0.18rem 0.55rem;font-size:0.7rem;color:rgba(255,255,255,0.8);font-weight:600}
+.hero-stats{display:flex;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-lg);overflow:hidden}
+.hero-stat{flex:1;padding:1rem;text-align:center;border-right:1px solid rgba(255,255,255,0.1)}
+.hero-stat:last-child{border-right:none}
+.stat-n{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:700;color:#93C5FD}
+.stat-l{font-size:0.68rem;color:rgba(255,255,255,0.5);margin-top:2px}
+
+/* SECTIONS */
+.section{padding:5rem 5vw}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-label{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.1em;font-weight:600;color:var(--blue);margin-bottom:0.75rem}
+.section-label::before{content:'';width:1.5rem;height:2px;background:currentColor;border-radius:1px}
+.section-title{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:700;line-height:1.15;color:var(--navy);margin-bottom:0.75rem}
+.section-title em{font-style:italic;color:var(--blue)}
+.section-sub{color:var(--muted);font-size:1rem;font-weight:400;max-width:54ch;margin-bottom:3rem}
+
+/* METODOLOGIA */
+.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
+.method-text{color:var(--muted);font-size:0.95rem;line-height:1.75;margin-bottom:1.75rem}
+.method-tags{display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.75rem}
+.method-tag{display:inline-block;background:var(--blue-light);color:var(--blue);border-radius:2rem;padding:0.3rem 0.9rem;font-size:0.8rem;font-weight:600}
+.arrow{color:var(--muted)}
+.modality-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.modality-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem}
+.modality-icon{font-size:1.5rem;margin-bottom:0.5rem}
+.modality-title{font-weight:700;font-size:0.95rem;color:var(--navy);margin-bottom:0.25rem}
+.modality-desc{font-size:0.82rem;color:var(--muted);line-height:1.5}
+.levels-visual{background:var(--navy);border-radius:var(--radius-lg);padding:2rem}
+.levels-title{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:700;margin-bottom:1.25rem;color:#93C5FD}
+.level-row{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem}
+.level-code{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700;color:#fff;flex-shrink:0}
+.lv-a1{background:#6366F1}.lv-a2{background:#8B5CF6}.lv-b1{background:#0EA5E9}
+.lv-b2{background:#06B6D4}.lv-c1{background:#10B981}.lv-c2{background:#F59E0B;color:var(--navy)}
+.level-name{font-size:0.8rem;font-weight:600;color:#fff}
+.level-bar-wrap{height:5px;background:rgba(255,255,255,0.1);border-radius:3px;margin-top:4px;overflow:hidden}
+.level-bar{height:100%;border-radius:3px;background:rgba(255,255,255,0.35)}
+
+/* BENEFICIOS */
+#beneficios{background:var(--surface)}
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:1.5rem}
+.benefit-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem;transition:transform 0.3s,box-shadow 0.3s;position:relative;overflow:hidden}
+.benefit-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.benefit-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.benefit-card:hover::after{transform:scaleX(1)}
+.benefit-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.25rem;background:var(--blue-light)}
+.benefit-card:nth-child(2) .benefit-icon{background:var(--gold-light)}
+.benefit-card:nth-child(3) .benefit-icon{background:var(--green-light)}
+.benefit-card:nth-child(4) .benefit-icon{background:#FDE8F0}
+.benefit-title{font-weight:700;font-size:1rem;color:var(--navy);margin-bottom:0.5rem}
+.benefit-text{font-size:0.88rem;color:var(--muted);line-height:1.65}
+
+/* TESTIMONIOS */
+.testimonios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.5rem}
+.testi-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem}
+.testi-quote{font-size:2.5rem;font-family:'Fraunces',serif;color:var(--blue-mid);line-height:1;margin-bottom:0.75rem;display:block}
+.testi-text{font-size:0.95rem;color:var(--text);font-style:italic;line-height:1.7;margin-bottom:1.25rem}
+.testi-text.placeholder{color:var(--muted);font-style:normal;border:1.5px dashed var(--border);border-radius:8px;padding:0.75rem;font-size:0.83rem}
+.testi-author{display:flex;align-items:center;gap:0.75rem}
+.testi-avatar{width:40px;height:40px;border-radius:50%;background:var(--blue-light);display:flex;align-items:center;justify-content:center;font-size:0.82rem;font-weight:700;color:var(--blue);flex-shrink:0}
+.testi-name{font-weight:700;font-size:0.88rem;color:var(--navy)}
+.testi-role{font-size:0.75rem;color:var(--muted)}
+.testi-stars{color:var(--gold);font-size:0.82rem;margin-bottom:2px}
+.testi-note{text-align:center;margin-top:1.5rem;padding:1.1rem;background:var(--blue-light);border-radius:var(--radius);border:1px solid var(--blue-mid)}
+.testi-note p{font-size:0.83rem;color:var(--blue)}
+
+/* CONTACTO */
+#contacto{background:var(--navy);color:#fff;position:relative;overflow:hidden;padding:5rem 5vw}
+#contacto::before{content:'';position:absolute;top:-30%;right:-10%;width:50vw;height:50vw;border-radius:50%;background:radial-gradient(circle,rgba(26,86,219,0.2) 0%,transparent 65%);pointer-events:none}
+.contact-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;position:relative;z-index:1}
+.contact-info .section-label{color:#93C5FD}
+.contact-info .section-title{color:#fff}
+.contact-info .section-sub{color:rgba(255,255,255,0.6)}
+.contact-options{display:flex;flex-direction:column;gap:0.85rem;margin-bottom:1.75rem}
+.contact-option{display:flex;align-items:center;gap:1rem;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius);padding:0.9rem 1.1rem;text-decoration:none;color:#fff;transition:all 0.2s}
+.contact-option:hover{background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.25)}
+.contact-option-icon{font-size:1.2rem;width:32px;text-align:center;flex-shrink:0}
+.contact-option-label{font-weight:600;font-size:0.88rem}
+.contact-option-sub{font-size:0.78rem;color:rgba(255,255,255,0.45)}
+.btn-whatsapp{display:inline-flex;align-items:center;gap:0.6rem;background:#25D366;color:#fff;border:none;padding:0.85rem 1.75rem;border-radius:2rem;font-size:0.92rem;font-family:inherit;font-weight:700;cursor:pointer;text-decoration:none;transition:all 0.2s}
+.btn-whatsapp:hover{background:#1ebe5b;transform:translateY(-2px)}
+.contact-form-wrap{background:var(--white);border-radius:var(--radius-lg);padding:2.25rem}
+.form-title{font-family:'Fraunces',serif;font-size:1.35rem;font-weight:700;color:var(--navy);margin-bottom:0.2rem}
+.form-subtitle{font-size:0.83rem;color:var(--muted);margin-bottom:1.5rem}
+.form-grid{display:flex;flex-direction:column;gap:1rem}
+.form-row-2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:0.3rem}
+.form-group label{font-size:0.78rem;font-weight:600;color:var(--navy);letter-spacing:0.03em}
+.form-group input,.form-group select,.form-group textarea{border:1.5px solid var(--border);border-radius:10px;padding:0.65rem 0.9rem;font-family:inherit;font-size:0.88rem;color:var(--text);background:var(--surface);transition:border-color 0.2s;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue);background:#fff}
+.form-group textarea{min-height:85px;resize:vertical}
+.btn-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:0.85rem;border-radius:2rem;font-size:0.92rem;font-family:inherit;font-weight:700;cursor:pointer;transition:all 0.2s;margin-top:0.25rem}
+.btn-submit:hover{background:#1446c0}
+.form-success{display:none;text-align:center;padding:1.75rem;background:var(--green-light);border-radius:var(--radius);color:var(--green)}
+.form-success p{font-weight:600}
+
+/* CTA FINAL */
+.cta-final{background:var(--blue);color:#fff;text-align:center;padding:4rem 5vw}
+.cta-final h2{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:700;margin-bottom:0.5rem}
+.cta-final p{font-size:1rem;color:rgba(255,255,255,0.75);margin-bottom:2rem}
+.cta-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,0.4);padding:2rem 5vw;border-top:1px solid rgba(255,255,255,0.06)}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;color:#fff}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{font-size:0.78rem;color:rgba(255,255,255,0.35);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:#fff}
+footer p{font-size:0.75rem}
+
+/* ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-up.visible{opacity:1;transform:none}
+
+/* BILINGUAL hidden state */
+[data-lang="en"]{display:none}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}
+  .hero-visual{order:-1}
+  .method-grid{grid-template-columns:1fr}
+  .contact-inner{grid-template-columns:1fr}
+  .form-row-2{grid-template-columns:1fr}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);flex-direction:column;padding:1.25rem 5vw;gap:1rem;z-index:99}
+  .nav-links.open{display:flex}
+  .nav-toggle{display:flex}
+  .hero{padding:3rem 5vw 2.5rem}
+  .section{padding:3.5rem 5vw}
+  #contacto{padding:3.5rem 5vw}
+}
+</style>
+</head>
+<body>
+
+<!-- LANG BAR -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('es',this)">🇪🇸 Español</button>
+  <button class="lang-btn" onclick="setLang('en',this)">🇺🇸 English</button>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="#"><span class="logo-dot"></span> ProfesorBilingüe</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#metodologia" data-es="Metodología" data-en="Method">Metodología</a></li>
+      <li><a href="#beneficios" data-es="Beneficios" data-en="Benefits">Beneficios</a></li>
+      <li><a href="#testimonios" data-es="Testimonios" data-en="Testimonials">Testimonios</a></li>
+      <li><a href="#contacto" class="nav-cta" data-es="Reservar clase" data-en="Book a class">Reservar clase</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">🌐 Profesor Certificado · Inglés &amp; Español</div>
+      <h1 data-es="Domina el <em>Inglés</em> o el <em>Español</em> con método profesional" data-en="Master <em>English</em> or <em>Spanish</em> with a professional method">Domina el <em>Inglés</em> o el <em>Español</em> con método profesional</h1>
+      <p class="hero-sub" data-es="Un método flexible y diseñado para resultados reales. Todos los niveles, online y presencial." data-en="A flexible, proven approach designed for real-world results. All levels, online &amp; in-person.">Un método flexible y diseñado para resultados reales. Todos los niveles, online y presencial.</p>
+      <p class="hero-sub-en" data-es='"Master English or Spanish with a professional, flexible method designed for real-world results."' data-en='"Domina el Inglés o el Español con un método profesional, flexible y diseñado para resultados reales."'>"Master English or Spanish with a professional, flexible method designed for real-world results."</p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn-gold" data-es="🎓 Reserva tu clase de prueba gratis" data-en="🎓 Book your free trial lesson">🎓 Reserva tu clase de prueba gratis</a>
+        <a href="#metodologia" class="btn-outline-white" data-es="Ver el método" data-en="See the method">Ver el método</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hcard">
+        <div class="hcard-flag">🇺🇸 🇬🇧</div>
+        <div class="hcard-title">English</div>
+        <div class="hcard-desc">Conversación · Negocios · TOEFL · IELTS · Cambridge</div>
+        <div class="hcard-levels">
+          <span class="level-pill">A1</span><span class="level-pill">A2</span><span class="level-pill">B1</span><span class="level-pill">B2</span><span class="level-pill">C1</span><span class="level-pill">C2</span>
+        </div>
+      </div>
+      <div class="hcard">
+        <div class="hcard-flag">🇪🇸 🇲🇽 🇨🇴</div>
+        <div class="hcard-title">Español</div>
+        <div class="hcard-desc">ELE · DELE · Cultura · Pronunciación auténtica</div>
+        <div class="hcard-levels">
+          <span class="level-pill">A1</span><span class="level-pill">A2</span><span class="level-pill">B1</span><span class="level-pill">B2</span><span class="level-pill">C1</span><span class="level-pill">C2</span>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="stat-n">A1–C2</div><div class="stat-l" data-es="Todos los niveles" data-en="All levels">Todos los niveles</div></div>
+        <div class="hero-stat"><div class="stat-n">2</div><div class="stat-l" data-es="Idiomas" data-en="Languages">Idiomas</div></div>
+        <div class="hero-stat"><div class="stat-n">100%</div><div class="stat-l" data-es="Personalizado" data-en="Personalized">Personalizado</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METODOLOGIA -->
+<section class="section" id="metodologia">
+  <div class="section-inner">
+    <div class="method-grid">
+      <div class="fade-up">
+        <div class="section-label" data-es="Metodología" data-en="Method">Metodología</div>
+        <h2 class="section-title" data-es="Un enfoque que <em>realmente funciona</em>" data-en="An approach that <em>actually works</em>">Un enfoque que <em>realmente funciona</em></h2>
+        <p class="method-text" data-es="Mi método combina años de experiencia docente con el equilibrio perfecto: accesible en precio y ritmo, pero altamente efectivo con resultados medibles. Cada clase está diseñada para ti, no para un grupo genérico." data-en="My method combines years of teaching experience with the perfect balance: accessible in price and pace, yet highly effective with measurable results. Every class is designed for you — not a generic group.">Mi método combina años de experiencia docente con el equilibrio perfecto: accesible en precio y ritmo, pero altamente efectivo con resultados medibles. Cada clase está diseñada para ti, no para un grupo genérico.</p>
+        <div class="method-tags">
+          <span class="method-tag" data-es="✅ Principiante (A1)" data-en="✅ Beginner (A1)">✅ Principiante (A1)</span>
+          <span class="arrow">→</span>
+          <span class="method-tag" data-es="🏆 Avanzado (C2)" data-en="🏆 Advanced (C2)">🏆 Avanzado (C2)</span>
+        </div>
+        <div class="modality-grid">
+          <div class="modality-card">
+            <div class="modality-icon">💻</div>
+            <div class="modality-title" data-es="Online" data-en="Online">Online</div>
+            <div class="modality-desc" data-es="Clases por videollamada, dinámicas y efectivas. Sin importar dónde estés en el mundo." data-en="Dynamic video call lessons. Effective no matter where you are in the world.">Clases por videollamada, dinámicas y efectivas. Sin importar dónde estés en el mundo.</div>
+          </div>
+          <div class="modality-card">
+            <div class="modality-icon">🏫</div>
+            <div class="modality-title" data-es="Presencial" data-en="In-person">Presencial</div>
+            <div class="modality-desc" data-es="Aprendizaje cara a cara. Ideal para quienes prefieren la interacción directa." data-en="Face-to-face learning. Ideal for those who prefer direct interaction.">Aprendizaje cara a cara. Ideal para quienes prefieren la interacción directa.</div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-up" style="transition-delay:0.15s">
+        <div class="levels-visual">
+          <div class="levels-title" data-es="Niveles que cubrimos" data-en="Levels we cover">Niveles que cubrimos</div>
+          <div class="level-row"><div class="level-code lv-a1">A1</div><div style="flex:1"><div class="level-name" data-es="Principiante absoluto" data-en="Absolute beginner">Principiante absoluto</div><div class="level-bar-wrap"><div class="level-bar" style="width:15%"></div></div></div></div>
+          <div class="level-row"><div class="level-code lv-a2">A2</div><div style="flex:1"><div class="level-name" data-es="Básico" data-en="Basic">Básico</div><div class="level-bar-wrap"><div class="level-bar" style="width:28%"></div></div></div></div>
+          <div class="level-row"><div class="level-code lv-b1">B1</div><div style="flex:1"><div class="level-name" data-es="Intermedio bajo" data-en="Lower intermediate">Intermedio bajo</div><div class="level-bar-wrap"><div class="level-bar" style="width:45%"></div></div></div></div>
+          <div class="level-row"><div class="level-code lv-b2">B2</div><div style="flex:1"><div class="level-name" data-es="Intermedio alto" data-en="Upper intermediate">Intermedio alto</div><div class="level-bar-wrap"><div class="level-bar" style="width:62%"></div></div></div></div>
+          <div class="level-row"><div class="level-code lv-c1">C1</div><div style="flex:1"><div class="level-name" data-es="Avanzado" data-en="Advanced">Avanzado</div><div class="level-bar-wrap"><div class="level-bar" style="width:80%"></div></div></div></div>
+          <div class="level-row"><div class="level-code lv-c2">C2</div><div style="flex:1"><div class="level-name" data-es="Maestría / Perfeccionamiento" data-en="Mastery / Proficiency">Maestría / Perfeccionamiento</div><div class="level-bar-wrap"><div class="level-bar" style="width:100%"></div></div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFICIOS -->
+<section class="section" id="beneficios">
+  <div class="section-inner">
+    <div class="section-label" data-es="¿Por qué elegirme?" data-en="Why choose me?">¿Por qué elegirme?</div>
+    <h2 class="section-title" data-es="Las ventajas del <em>método</em>" data-en="The advantages of the <em>method</em>">Las ventajas del <em>método</em></h2>
+    <p class="section-sub" data-es="Cuatro razones concretas que hacen la diferencia en tu aprendizaje." data-en="Four concrete reasons that make a difference in your learning.">Cuatro razones concretas que hacen la diferencia en tu aprendizaje.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">🎓</div>
+        <div class="benefit-title" data-es="Experiencia Comprobada" data-en="Proven Experience">Experiencia Comprobada</div>
+        <p class="benefit-text" data-es="Años formando alumnos bilingües respaldan cada lección. No aprenderás de un teórico, sino de un docente con resultados reales y comprobables." data-en="Years of training bilingual students back every lesson. You won't learn from a theorist, but from a teacher with real, proven results.">Años formando alumnos bilingües respaldan cada lección. No aprenderás de un teórico, sino de un docente con resultados reales y comprobables.</p>
+      </div>
+      <div class="benefit-card fade-up" style="transition-delay:0.1s">
+        <div class="benefit-icon">⏰</div>
+        <div class="benefit-title" data-es="Flexibilidad Total" data-en="Complete Flexibility">Flexibilidad Total</div>
+        <p class="benefit-text" data-es="Aprende a tu ritmo, en tu horario y en el formato que mejor te funcione. Online o presencial, la decisión es tuya." data-en="Learn at your own pace, on your schedule, in the format that works best for you. Online or in-person — your choice.">Aprende a tu ritmo, en tu horario y en el formato que mejor te funcione. Online o presencial, la decisión es tuya.</p>
+      </div>
+      <div class="benefit-card fade-up" style="transition-delay:0.2s">
+        <div class="benefit-icon">💰</div>
+        <div class="benefit-title" data-es="Costo-Beneficio Real" data-en="Real Value for Money">Costo-Beneficio Real</div>
+        <p class="benefit-text" data-es="Educación de alta calidad a un precio accesible. Inviertes en una habilidad para toda la vida, no en un servicio descartable." data-en="High-quality education at an accessible price. You invest in a lifelong skill, not a disposable service.">Educación de alta calidad a un precio accesible. Inviertes en una habilidad para toda la vida, no en un servicio descartable.</p>
+      </div>
+      <div class="benefit-card fade-up" style="transition-delay:0.3s">
+        <div class="benefit-icon">🔀</div>
+        <div class="benefit-title" data-es="Bilingüismo Real" data-en="True Bilingualism">Bilingüismo Real</div>
+        <p class="benefit-text" data-es="Al ser docente de ambos idiomas, entiendo los puentes y dificultades específicas del paso de uno al otro. Una ventaja que muy pocos profesores pueden ofrecer." data-en="As a teacher of both languages, I understand the bridges and specific challenges of moving between them — an advantage very few teachers can offer.">Al ser docente de ambos idiomas, entiendo los puentes y dificultades específicas del paso de uno al otro. Una ventaja que muy pocos profesores pueden ofrecer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="section" id="testimonios">
+  <div class="section-inner">
+    <div class="section-label" data-es="Testimonios" data-en="Testimonials">Testimonios</div>
+    <h2 class="section-title" data-es="Lo que dicen mis <em>estudiantes</em>" data-en="What my <em>students</em> say">Lo que dicen mis <em>estudiantes</em></h2>
+    <p class="section-sub" data-es="Resultados reales de personas reales." data-en="Real results from real people.">Resultados reales de personas reales.</p>
+    <div class="testimonios-grid">
+      <div class="testi-card fade-up">
+        <span class="testi-quote">"</span>
+        <p class="testi-text">"Las clases con [Tu Nombre] cambiaron mi confianza al hablar en el trabajo. ¡Totalmente recomendado!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar">JR</div>
+          <div>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-name">Juan R.</div>
+            <div class="testi-role">Estudiante de inglés · B2</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up" style="transition-delay:0.1s">
+        <span class="testi-quote">"</span>
+        <p class="testi-text">"Professional, patient, and very effective. I reached my goal in half the time I expected."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#FEF3C7;color:#92400E">SW</div>
+          <div>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-name">Sarah W.</div>
+            <div class="testi-role">Spanish learner · C1</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up" style="transition-delay:0.2s">
+        <span class="testi-quote">"</span>
+        <p class="testi-text placeholder" data-es="📝 Pega aquí el testimonio de un alumno real. Pídele que te escriba unas líneas y reemplaza este texto en el HTML." data-en="📝 Paste a real student testimonial here. Ask them to write a few lines and replace this text in the HTML.">📝 Pega aquí el testimonio de un alumno real. Pídele que te escriba unas líneas y reemplaza este texto en el HTML.</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:#f0f0f0;color:#aaa">?</div>
+          <div>
+            <div class="testi-name" style="color:var(--muted)" data-es="Tu próximo alumno" data-en="Your next student">Tu próximo alumno</div>
+            <div class="testi-role" data-es="Próximo testimonio" data-en="Upcoming testimonial">Próximo testimonio</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-note">
+      <p data-es="💡 Consejo: reemplaza los textos de ejemplo con testimonios reales de tus alumnos en el archivo HTML." data-en="💡 Tip: replace the sample texts with real student testimonials in the HTML file.">💡 Consejo: reemplaza los textos de ejemplo con testimonios reales de tus alumnos en el archivo HTML.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contact-inner">
+    <div class="contact-info fade-up">
+      <div class="section-label" data-es="Contacto" data-en="Contact">Contacto</div>
+      <h2 class="section-title" data-es="¿Listo para dar el siguiente paso?" data-en="Ready to take the next step?">¿Listo para dar el siguiente paso?</h2>
+      <p class="section-sub" data-es="Hablemos por WhatsApp o completa el formulario. La primera clase exploratoria es completamente gratis." data-en="Message me on WhatsApp or fill the form. Your first exploratory class is completely free.">Hablemos por WhatsApp o completa el formulario. La primera clase exploratoria es completamente gratis.</p>
+      <div class="contact-options">
+        <!-- CAMBIA el número de WhatsApp: código de país + número sin guiones -->
+        <a href="https://wa.me/50600000000?text=Hola,%20me%20interesa%20una%20clase%20de%20prueba%20gratis" class="contact-option" target="_blank">
+          <div class="contact-option-icon">💬</div>
+          <div>
+            <div class="contact-option-label" data-es="WhatsApp directo" data-en="Direct WhatsApp">WhatsApp directo</div>
+            <div class="contact-option-sub" data-es="Respuesta rápida · La opción más fácil" data-en="Quick response · The easiest option">Respuesta rápida · La opción más fácil</div>
+          </div>
+        </a>
+        <!-- CAMBIA el email -->
+        <a href="mailto:tu@email.com" class="contact-option">
+          <div class="contact-option-icon">📧</div>
+          <div>
+            <div class="contact-option-label">Email</div>
+            <div class="contact-option-sub">tu@email.com</div>
+          </div>
+        </a>
+        <!-- CAMBIA el link de Instagram -->
+        <a href="https://instagram.com/tuperfil" class="contact-option" target="_blank">
+          <div class="contact-option-icon">📸</div>
+          <div>
+            <div class="contact-option-label">Instagram</div>
+            <div class="contact-option-sub">@tuperfil</div>
+          </div>
+        </a>
+      </div>
+      <a href="https://wa.me/50600000000" class="btn-whatsapp" target="_blank">
+        💬 <span data-es="Hablemos por WhatsApp" data-en="Chat on WhatsApp">Hablemos por WhatsApp</span>
+      </a>
+    </div>
+    <div class="contact-form-wrap fade-up" style="transition-delay:0.15s">
+      <div class="form-title" data-es="Envíame un mensaje" data-en="Send me a message">Envíame un mensaje</div>
+      <div class="form-subtitle" data-es="Te respondo en menos de 24 horas." data-en="I'll reply within 24 hours.">Te respondo en menos de 24 horas.</div>
+      <form class="form-grid" id="contactForm">
+        <div class="form-row-2">
+          <div class="form-group">
+            <label data-es="Nombre" data-en="Name">Nombre</label>
+            <input type="text" placeholder="Tu nombre / Your name" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="tu@email.com" required>
+          </div>
+        </div>
+        <div class="form-row-2">
+          <div class="form-group">
+            <label data-es="Idioma de interés" data-en="Language of interest">Idioma de interés</label>
+            <select>
+              <option value="">Selecciona / Select...</option>
+              <option>Inglés / English</option>
+              <option>Español / Spanish</option>
+              <option>Ambos / Both</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label data-es="Nivel actual" data-en="Current level">Nivel actual</label>
+            <select>
+              <option value="">Selecciona / Select...</option>
+              <option>Principiante (A1-A2)</option>
+              <option>Intermedio (B1-B2)</option>
+              <option>Avanzado (C1-C2)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label data-es="¿Cuál es tu objetivo?" data-en="What is your goal?">¿Cuál es tu objetivo?</label>
+          <textarea placeholder="Cuéntame qué quieres lograr... / Tell me what you want to achieve..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit" data-es="¡Empieza hoy! →" data-en="Get started today! →">¡Empieza hoy! →</button>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <p data-es="✅ ¡Mensaje enviado! Te respondo pronto." data-en="✅ Message sent! I'll get back to you soon.">✅ ¡Mensaje enviado! Te respondo pronto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-final">
+  <h2 data-es="¡Empieza hoy mismo!" data-en="Get started today!">¡Empieza hoy mismo!</h2>
+  <p data-es="Primera clase de prueba gratis. Sin compromisos." data-en="Free first trial class. No commitment.">Primera clase de prueba gratis. Sin compromisos.</p>
+  <div class="cta-btns">
+    <a href="#contacto" class="btn-gold" data-es="🎓 Reserva tu clase gratis" data-en="🎓 Book your free class">🎓 Reserva tu clase gratis</a>
+    <a href="https://wa.me/50600000000" class="btn-whatsapp" target="_blank">💬 WhatsApp</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">ProfesorBilingüe</div>
+    <div class="footer-links">
+      <a href="#metodologia">Metodología</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#contacto">Contacto</a>
+    </div>
+    <p>© 2025 · Todos los derechos reservados</p>
+  </div>
+</footer>
+
+<script>
+// Scroll animations
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e,i) => {
+    if(e.isIntersecting) setTimeout(()=>e.target.classList.add('visible'), i*80);
+  });
+}, {threshold:0.08});
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+// Language switcher
+let currentLang = 'es';
+function setLang(lang, btn) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-es][data-en]').forEach(el => {
+    const val = el.getAttribute('data-' + lang);
+    if (!val) return;
+    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+      el.placeholder = val;
+    } else if (el.tagName === 'BUTTON' || el.tagName === 'A' || el.tagName === 'OPTION') {
+      el.textContent = val;
+    } else {
+      el.innerHTML = val;
+    }
+  });
+}
+
+// Form submit
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  this.style.display = 'none';
+  const s = document.getElementById('formSuccess');
+  s.style.display = 'block';
+  s.querySelector('p').textContent = currentLang === 'es'
+    ? '✅ ¡Mensaje enviado! Te respondo pronto.'
+    : '✅ Message sent! I\'ll get back to you soon.';
+});
+</script>
+</body>
+</html>
