@@ -3,90 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonatan Agüero | Clases de Inglés y Español</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&family=Fraunces:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Aprende Inglés Fácil | Clases Online y Presencial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
+            --navy: #100823;
             --primary: #7C3AED;
             --coral: #FB923C;
-            --navy: #100823;
+            --teal: #14B8A6;
+            --surface: #FAFAF9;
+            --text: #1E293B;
+            --white: #FFFFFF;
         }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #FAFAF9; }
-        .font-serif { font-family: 'Fraunces', serif; }
-        .bento-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
-        .card { background: white; border-radius: 24px; padding: 2rem; transition: transform 0.3s ease; border: 1px solid #e5e7eb; }
-        .card:hover { transform: translateY(-5px); }
-        @media (max-width: 768px) { .bento-grid { grid-template-columns: 1fr; } }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Barra de Idiomas */
+        .lang-bar {
+            background: var(--navy);
+            padding: 0.5rem 5vw;
+            display: flex;
+            justify-content: flex-end;
+            gap: 0.75rem;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            border-radius: 2rem;
+            cursor: pointer;
+            padding: 0.25rem 0.75rem;
+        }
+
+        .lang-btn.active { background: var(--primary); border-color: var(--primary); }
+
+        /* Navegación */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(14px);
+            padding: 1rem 5vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .nav-logo { font-family: 'Fraunces', serif; font-weight: 700; font-size: 1.25rem; text-decoration: none; color: var(--navy); }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--navy) 0%, #2D1265 100%);
+            color: white;
+            padding: 5rem 5vw;
+            text-align: center;
+        }
+
+        .hero h1 { font-family: 'Fraunces', serif; font-size: 3.5rem; margin-bottom: 1rem; }
+        .hero h1 em { font-style: italic; color: #A78BFA; }
+        
+        .btn-coral {
+            background: var(--coral);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 1.5rem;
+        }
     </style>
 </head>
-<body class="text-[#1E293B]">
+<body>
+    <div class="lang-bar">
+        <button class="lang-btn active" onclick="switchLang('es', this)">ES</button>
+        <button class="lang-btn" onclick="switchLang('en', this)">EN</button>
+    </div>
 
-    <!-- Navegación -->
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 px-6 py-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="#" class="font-serif text-2xl font-bold text-[#100823]">JA<span class="text-[#7C3AED]">.</span></a>
-            <div class="flex gap-4">
-                <a href="https://wa.me/50672590240" class="bg-[#FB923C] text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-[#EA580C] transition">¡Clase gratis!</a>
-            </div>
+    <nav>
+        <a href="#" class="nav-logo">✨ Inglés Fácil</a>
+        <div class="nav-links">
+            <a href="#contacto" class="btn-coral" style="padding: 0.5rem 1.5rem;">¡Clase Gratis!</a>
         </div>
     </nav>
 
-    <main class="max-w-6xl mx-auto p-6 mt-8">
-        <div class="bento-grid">
-            
-            <!-- Bloque Principal: Hero -->
-            <div class="card md:col-span-3 flex flex-col justify-center">
-                <span class="text-[#7C3AED] font-bold text-xs uppercase tracking-widest mb-4">Método Profesional & Efectivo</span>
-                <h1 class="font-serif text-4xl md:text-6xl font-bold leading-tight mb-6">
-                    Aprende <span class="italic text-[#7C3AED]">Inglés</span> y <span class="text-[#FB923C]">Español</span> de forma real.
-                </h1>
-                <p class="text-gray-500 text-lg max-w-xl mb-8">
-                    Clases personalizadas para todos los niveles (A1-C2). Modalidad presencial en Costa Rica y online para el resto del mundo.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="https://wa.me/50672590240" class="bg-[#100823] text-white px-8 py-4 rounded-2xl font-bold hover:scale-105 transition">Hablar por WhatsApp</a>
-                    <a href="mailto:jonatan.javier.aguero@gmail.com" class="border-2 border-gray-100 px-8 py-4 rounded-2xl font-bold hover:bg-gray-50 transition">Enviar Email</a>
-                </div>
-            </div>
+    <header class="hero">
+        <h1 data-es="Aprende inglés <em>sin estrés</em>" data-en="Learn English <em>stress-free</em>">Aprende inglés <em>sin estrés</em></h1>
+        <p data-es="Clases personalizadas para hablar desde el primer día." data-en="Personalized classes to speak from day one.">Clases personalizadas para hablar desde el primer día.</p>
+        <a href="https://wa.me/50672590240" class="btn-coral">Empezar ahora</a>
+    </header>
 
-            <!-- Bloque 2: Foto (La que generamos) -->
-            <div class="card md:col-span-1 p-0 overflow-hidden bg-gray-100 relative min-h-[300px]">
-                <img src="estudiantes.png" alt="Aprendices" class="w-full h-full object-cover">
-            </div>
-
-            <!-- Bloque 3: Modalidad -->
-            <div class="card bg-[#7C3AED] text-white flex flex-col justify-center">
-                <div class="text-3xl mb-4">📍</div>
-                <h2 class="text-2xl font-bold mb-2 text-white">Presencial & Online</h2>
-                <p class="text-white/80 text-sm italic">Flexibilidad total para tu agenda.</p>
-            </div>
-
-            <!-- Bloque 4: Niveles -->
-            <div class="card bg-white flex flex-col justify-center border-[#7C3AED] border-2">
-                <h2 class="text-2xl font-bold mb-4 text-[#100823]">Todos los niveles</h2>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-[#F3F0FF] text-[#7C3AED] px-3 py-1 rounded-lg text-xs font-bold">A1-A2</span>
-                    <span class="bg-[#F3F0FF] text-[#7C3AED] px-3 py-1 rounded-lg text-xs font-bold">B1-B2</span>
-                    <span class="bg-[#F3F0FF] text-[#7C3AED] px-3 py-1 rounded-lg text-xs font-bold">C1-C2</span>
-                </div>
-            </div>
-
-            <!-- Bloque 5: Valor/Experiencia -->
-            <div class="card md:col-span-2 bg-[#14B8A6] text-white">
-                <h3 class="text-2xl font-bold mb-4 text-white">¿Por qué elegirme?</h3>
-                <p class="text-white/90 leading-relaxed">
-                    Soy un profesor profesional con años de experiencia simplificando idiomas. Mi método es accesible económicamente pero altamente efectivo para lograr fluidez real.
-                </p>
-            </div>
-
-        </div>
-    </main>
-
-    <footer class="text-center py-12 text-gray-400 text-sm">
-        <p>Jonatan Agüero • Costa Rica • 2026</p>
-        <p class="mt-2 font-bold text-gray-600">+506 7259 0240</p>
-    </footer>
-
+    <script>
+        function switchLang(lang, btn) {
+            document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('[data-es]').forEach(el => {
+                el.innerHTML = el.getAttribute('data-' + lang);
+            });
+        }
+    </script>
 </body>
 </html>
