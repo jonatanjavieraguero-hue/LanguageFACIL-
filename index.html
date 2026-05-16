@@ -912,6 +912,91 @@ body.mode-en .benefit-banner-overlay{
   .modality-row{grid-template-columns:1fr}
   .nav-logo{font-size:1rem}
 }
+
+/* ── PRIVATE CLASS BADGE ── */
+.private-badge-row{
+  display:flex;gap:0.75rem;margin-bottom:2rem;flex-wrap:wrap;
+}
+.private-badge{
+  display:flex;align-items:center;gap:0.75rem;
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:14px;
+  padding:0.85rem 1.1rem;
+  backdrop-filter:blur(10px);
+  flex:1;min-width:200px;
+  transition:background 0.2s,border-color 0.2s;
+}
+.private-badge:hover{
+  background:rgba(255,255,255,0.12);
+  border-color:rgba(200,169,110,0.4);
+}
+.private-badge-icon{
+  font-size:1.5rem;flex-shrink:0;
+  width:40px;height:40px;
+  background:rgba(200,169,110,0.15);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+}
+.private-badge-text{}
+.private-badge-title{
+  font-weight:700;font-size:0.86rem;color:#fff;
+  margin-bottom:2px;line-height:1;
+}
+.private-badge-sub{
+  font-size:0.72rem;color:rgba(255,255,255,0.42);
+  line-height:1.4;
+}
+
+/* ── WHATSAPP BUTTON HERO ── */
+.btn-whatsapp-hero{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  background:#25D366;color:#fff;
+  border:none;padding:0.85rem 1.75rem;border-radius:2rem;
+  font-size:0.91rem;font-family:'DM Sans',sans-serif;font-weight:700;
+  cursor:pointer;text-decoration:none;
+  transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow:0 4px 20px rgba(37,211,102,0.3);
+  position:relative;overflow:hidden;
+}
+.btn-whatsapp-hero:hover{
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:0 10px 32px rgba(37,211,102,0.42);
+  background:#1ebe5b;
+}
+.btn-whatsapp-hero:active{transform:scale(0.97)}
+.btn-whatsapp-hero svg{
+  width:20px;height:20px;flex-shrink:0;
+  filter:drop-shadow(0 1px 2px rgba(0,0,0,0.15));
+}
+.btn-whatsapp-hero::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.12),transparent);
+  transform:translateX(-100%);transition:transform 0.5s ease;
+}
+.btn-whatsapp-hero:hover::after{transform:translateX(100%)}
+
+/* ── WHATSAPP BUTTON — contact section ── */
+.btn-whatsapp-lg{
+  display:inline-flex;align-items:center;gap:0.65rem;
+  background:#25D366;color:#fff;
+  border:none;padding:0.9rem 1.85rem;border-radius:2rem;
+  font-size:0.93rem;font-family:'DM Sans',sans-serif;font-weight:700;
+  cursor:pointer;text-decoration:none;
+  transition:all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  box-shadow:0 4px 20px rgba(37,211,102,0.28);
+}
+.btn-whatsapp-lg:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 32px rgba(37,211,102,0.4);
+  background:#1ebe5b;
+}
+.btn-whatsapp-lg svg{width:20px;height:20px;flex-shrink:0}
+
+@media(max-width:768px){
+  .private-badge-row{flex-direction:column;gap:0.6rem}
+  .private-badge{min-width:unset}
+}
 </style>
 </head>
 <body>
@@ -986,8 +1071,30 @@ body.mode-en .benefit-banner-overlay{
       <div class="hero-slogan" data-es="Aprende Inglés Ya" data-en="Learn Spanish Now">Aprende Inglés Ya</div>
       <h1 class="hero-title" data-es="Aprendé <em>inglés</em> fácil, rápido y con ganas" data-en="Learn <em>Spanish</em> the way it's really spoken">Aprendé <em>inglés</em> fácil, rápido y con ganas</h1>
       <p class="hero-sub" data-es="¿Soñás con hablar inglés con confianza? Clases personalizadas, dinámicas y sin la aburrida gramática tradicional. Empezás desde cero y progresás rápido." data-en="Not textbook Spanish — real, living, everyday language from a native Costa Rican. Personalized classes, online or in-person. Your first class is free.">¿Soñás con hablar inglés con confianza? Clases personalizadas, dinámicas y sin la aburrida gramática tradicional. Empezás desde cero y progresás rápido.</p>
+      <!-- Private class badges -->
+      <div class="private-badge-row">
+        <div class="private-badge">
+          <div class="private-badge-icon">🔒</div>
+          <div class="private-badge-text">
+            <div class="private-badge-title" data-es="Clases 100% privadas" data-en="100% Private classes">Clases 100% privadas</div>
+            <div class="private-badge-sub" data-es="Solo vos y el profe, sin distracciones" data-en="Just you and the teacher, no distractions">Solo vos y el profe, sin distracciones</div>
+          </div>
+        </div>
+        <div class="private-badge">
+          <div class="private-badge-icon">📍</div>
+          <div class="private-badge-text">
+            <div class="private-badge-title" data-es="Vamos donde vos quieras" data-en="We go where you want">Vamos donde vos quieras</div>
+            <div class="private-badge-sub" data-es="Tu casa, café, trabajo u online" data-en="Your home, café, office or online">Tu casa, café, trabajo u online</div>
+          </div>
+        </div>
+      </div>
       <div class="hero-actions">
-        <a href="#contacto" class="btn-primary" data-es="🎓 Reservá tu clase gratis" data-en="🎓 Book your free class">🎓 Reservá tu clase gratis</a>
+        <a href="https://wa.me/50672590240?text=Hola%2C%20quiero%20reservar%20mi%20clase%20gratis" target="_blank" rel="noopener" class="btn-whatsapp-hero">
+          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          <span data-es="Reservar clase por WhatsApp" data-en="Book class on WhatsApp">Reservar clase por WhatsApp</span>
+        </a>
         <a href="#metodologia" class="btn-ghost" data-es="¿Cómo funciona?" data-en="How does it work?">¿Cómo funciona?</a>
       </div>
     </div>
@@ -1230,8 +1337,11 @@ body.mode-en .benefit-banner-overlay{
           </div>
         </a>
       </div>
-      <a href="https://wa.me/50672590240?text=Hola%2C%20quiero%20una%20clase%20gratis" class="btn-whatsapp" target="_blank" rel="noopener">
-        💬 <span data-es="Escribinos por WhatsApp" data-en="Message us on WhatsApp">Escribinos por WhatsApp</span>
+      <a href="https://wa.me/50672590240?text=Hola%2C%20quiero%20reservar%20mi%20clase%20gratis" class="btn-whatsapp-lg" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span data-es="Escribinos por WhatsApp" data-en="Message us on WhatsApp">Escribinos por WhatsApp</span>
       </a>
     </div>
     <div class="form-wrap fade-up" style="transition-delay:0.15s">
@@ -1290,7 +1400,10 @@ body.mode-en .benefit-banner-overlay{
     <p data-es="Primera clase gratis, sin compromisos. Solo traé las ganas de aprender." data-en="First class free, no commitments. Just bring the desire to learn.">Primera clase gratis, sin compromisos. Solo traé las ganas de aprender.</p>
     <div class="cta-btns">
       <a href="#contacto" class="btn-dark" data-es="🎓 Reservar clase gratis" data-en="🎓 Book free class">🎓 Reservar clase gratis</a>
-      <a href="https://wa.me/50672590240" class="btn-whatsapp" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a href="https://wa.me/50672590240?text=Hola%2C%20quiero%20reservar%20mi%20clase%20gratis" class="btn-whatsapp-lg" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
     </div>
   </div>
 </div>
